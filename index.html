@@ -100,6 +100,7 @@
           <p class="eyebrow">J Imaging Inform Med 2024 &middot; co-first author</p>
           <h3><a href="https://doi.org/10.1007/s10278-024-00982-6">Development of Medical Imaging Data Standardization for Imaging-Based Observational Research: OMOP Common Data Model Extension</a></h3>
           <p class="featured__authors">Woo Yeon Park*, <strong>Kyulee Jeon*</strong>, Teri Sippel Schmidt, Haridimos Kondylakis, Tarik Alkasab, Blake E. Dewey, Seng Chan You, Paul Nagy</p>
+          <img class="featured__img" src="images/featured/micdm.png" alt="Medical Imaging CDM: Image_occurrence and Image_feature tables linked to the OMOP CDM" loading="lazy">
           <ul class="featured__points">
             <li>Proposes the Medical Imaging CDM, the imaging extension for OMOP CDM: two new tables and two vocabularies that link imaging events and image-derived features with standardized clinical data.</li>
             <li>The basis of my later work on multimodal data ETL and AI validation.</li>
@@ -107,26 +108,28 @@
           <p class="pub__links"><a class="chip" href="https://doi.org/10.1007/s10278-024-00982-6">Paper</a></p>
         </article>
         <article class="card">
-          <p class="eyebrow">Ann Emerg Med 2024 &middot; co-first author</p>
-          <h3><a href="https://doi.org/10.1016/j.annemergmed.2024.06.004">Development of Clinically Validated Artificial Intelligence Model for Detecting ST-segment Elevation Myocardial Infarction</a></h3>
-          <p class="featured__authors">Sang-Hyup Lee*, <strong>Kyulee Jeon*</strong>, Yong-Joon Lee, Seng Chan You, Seung-Jun Lee, Sung-Jin Hong, Chul-Min Ahn, Jung-Sun Kim, Byeong-Keuk Kim, Young-Guk Ko, Donghoon Choi, Myeong-Ki Hong</p>
-          <ul class="featured__points">
-            <li><strong>Clinically validated</strong> AI model: developed with ECGs of a percutaneous coronary intervention cohort to reflect the clinical context of STEMI patients, and validated with ECGs of emergency room patients with chest pain.</li>
-            <li>Supervised learning with labels from two cardiologists who reviewed coronary angiography.</li>
-            <li>Confirmed the benefit of the model in clinical settings: it identified additional true negatives for FIRST CP activation.</li>
-          </ul>
-          <p class="pub__links"><a class="chip" href="https://doi.org/10.1016/j.annemergmed.2024.06.004">Paper</a></p>
-        </article>
-        <article class="card">
           <p class="eyebrow">J Biomed Inform 2026 &middot; co-first author</p>
           <h3><a href="https://doi.org/10.1016/j.jbi.2026.105071">ARKE: An Ontology-Driven Framework for Automated Mapping of Local Radiology Procedure Terms to the LOINC-RadLex Playbook Using Large Language Model</a></h3>
           <p class="featured__authors">Sumin Lee*, <strong>Kyulee Jeon*</strong>, Joon Seok Lim, Yiju Park, Min Seong Kim, Ju Hyun Jin, Chang Hoon Han, Soon Ho Yoon, Seng Chan You</p>
+          <img class="featured__img" src="images/featured/arke.png" alt="Overview of the ARKE framework: LLM parser, scoring-based retrieval, and LLM selector" loading="lazy">
           <ul class="featured__points">
             <li><strong>Why it matters</strong>: multi-institutional validation of imaging AI needs the exam name that links imaging exams to patient data, but each hospital writes it differently.</li>
             <li><strong>Mapping as knowledge encoding</strong>: ARKE decomposes each local name into Playbook attributes, retrieves the top 10 candidates from the ontology, and confines the LLM to attribute parsing and final selection. No codes are invented.</li>
             <li><strong>Result</strong>: across two tertiary hospitals in Korea (3,326 procedure names), recall@1 of 0.70 (internal) and 0.81 (external), more than 20 points above direct code-name mapping.</li>
           </ul>
           <p class="pub__links"><a class="chip" href="https://doi.org/10.1016/j.jbi.2026.105071">Paper</a></p>
+        </article>
+        <article class="card">
+          <p class="eyebrow">Ann Emerg Med 2024 &middot; co-first author</p>
+          <h3><a href="https://doi.org/10.1016/j.annemergmed.2024.06.004">Development of Clinically Validated Artificial Intelligence Model for Detecting ST-segment Elevation Myocardial Infarction</a></h3>
+          <p class="featured__authors">Sang-Hyup Lee*, <strong>Kyulee Jeon*</strong>, Yong-Joon Lee, Seng Chan You, Seung-Jun Lee, Sung-Jin Hong, Chul-Min Ahn, Jung-Sun Kim, Byeong-Keuk Kim, Young-Guk Ko, Donghoon Choi, Myeong-Ki Hong</p>
+          <img class="featured__img featured__img--narrow" src="images/featured/stemi.png" alt="ROC curve of the AI model compared with the ECG machine and clinical physicians" loading="lazy">
+          <ul class="featured__points">
+            <li><strong>Clinically validated</strong> AI model: developed with ECGs of a percutaneous coronary intervention cohort to reflect the clinical context of STEMI patients, and validated with ECGs of emergency room patients with chest pain.</li>
+            <li>Supervised learning with labels from two cardiologists who reviewed coronary angiography.</li>
+            <li>Confirmed the benefit of the model in clinical settings: it identified additional true negatives for FIRST CP activation.</li>
+          </ul>
+          <p class="pub__links"><a class="chip" href="https://doi.org/10.1016/j.annemergmed.2024.06.004">Paper</a></p>
         </article>
       </div>
     </section>
