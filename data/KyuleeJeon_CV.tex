@@ -1,134 +1,200 @@
-\documentclass[10pt,letterpaper]{article}
+\documentclass[9pt,letterpaper]{extarticle}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{charter}
-\usepackage[scaled=0.9]{helvet}
-\usepackage[letterpaper,top=0.45in,bottom=0.45in,left=0.68in,right=0.68in]{geometry}
+% Font: \timestrue = Times, \timesfalse = Latin Modern (font of the reference CV)
+\newif\iftimes
+\timestrue
+\iftimes
+  \usepackage{mathptmx}
+\else
+  \usepackage{lmodern}
+\fi
+\usepackage[letterpaper,top=0.55in,bottom=0.6in,left=0.62in,right=0.62in]{geometry}
 \usepackage{xcolor,enumitem,titlesec,tabularx,array,microtype}
 \usepackage[hidelinks]{hyperref}
-\definecolor{accent}{HTML}{1F5FA8}
-\definecolor{muted}{HTML}{666666}
-\definecolor{award}{HTML}{C0392B}
-\hypersetup{colorlinks=true,urlcolor=accent,linkcolor=accent}
+\definecolor{link}{HTML}{2F6FC4}
+\hypersetup{colorlinks=true,urlcolor=link,linkcolor=link}
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\tabcolsep}{0pt}
-\renewcommand{\arraystretch}{1.0}
-\titleformat{\section}{\sffamily\bfseries\small\color{accent}}{}{0pt}{\MakeUppercase}[{\vspace{-1pt}\color{accent}\titlerule[0.5pt]}]
-\titlespacing*{\section}{0pt}{6pt}{3pt}
-\setlist[itemize]{leftmargin=1.1em,itemsep=0pt,topsep=2pt,parsep=0pt,label={\color{accent}\textbullet}}
-\newcommand{\rt}[1]{\hfill{\sffamily\footnotesize\color{muted}#1}}
-\newcommand{\entry}[4]{\textbf{#1}\rt{#2}\\\textit{#3}\rt{#4}\par\vspace{2pt}}
-\newcommand{\me}{\textbf{Kyulee Jeon}}
-\newcommand{\aw}[1]{\leavevmode{\sffamily\bfseries\footnotesize\color{award}#1}}
-\newcommand{\vn}[1]{\leavevmode{\sffamily\bfseries\footnotesize\color{accent}#1}}
-\newcommand{\lb}[1]{\leavevmode{\sffamily\footnotesize\color{muted}#1}}
-\newcolumntype{L}{>{\raggedright\arraybackslash}p{1.12in}@{\hspace{0.13in}}}
+\titleformat{\section}{\large\bfseries\color{link}}{}{0pt}{}[{\vspace{-2pt}\color{black}\titlerule[0.4pt]}]
+\titlespacing*{\section}{0pt}{7pt}{3pt}
+\setlist[itemize]{leftmargin=1.2em,itemsep=0pt,topsep=3pt,parsep=0pt,label=\textbullet}
+\newcommand{\me}{\underline{\textbf{Kyulee Jeon}}}
+\newcommand{\mes}{\underline{\textbf{Kyulee Jeon}$^*$}}
+\newcommand{\role}[1]{(\textit{#1})}
+\newcommand{\head}[2]{\textbf{#1}\hfill\textit{#2}\par}
+\newcommand{\subhead}[2]{#1\hfill #2\par}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
-\newenvironment{rows}{\tabularx{\textwidth}{@{}LY@{}}}{\endtabularx}
-\newcommand{\gap}{\\\noalign{\vskip 1.6pt}}
+\newenvironment{rows}[1]{\tabularx{\textwidth}{@{}L{#1}@{\hspace{0.12in}}Y@{}}}{\endtabularx}
+\newcommand{\gap}{\\\noalign{\vskip 2.5pt}}
+\newcommand{\lgap}{\\\noalign{\vskip 4pt}}
+\newcommand{\sep}{\quad$|$\quad}
 
-\begin{document}\fontsize{9.5}{11}\selectfont
+\begin{document}
 \begin{center}
-{\sffamily\bfseries\fontsize{24}{28}\selectfont Kyulee Jeon}\\[5pt]
-{\sffamily\small\color{accent}Multimodal Health Data Interoperability \,\textperiodcentered\, Medical Imaging Data Standardization \,\textperiodcentered\, Evidence Generation for Clinical Artificial Intelligence}\\[3pt]
-Ph.D. Candidate, Biomedical Systems Informatics, Yonsei University College of Medicine\\[2pt]
-\href{mailto:jklee320@yuhs.ac}{jklee320@yuhs.ac} \textcolor{muted}{$|$}
-\href{https://kyulee-jeon.github.io}{kyulee-jeon.github.io} \textcolor{muted}{$|$}
-\href{https://scholar.google.com/citations?user=WhhJ_usAAAAJ}{Google Scholar} \textcolor{muted}{$|$}
-\href{https://github.com/kyulee-jeon}{GitHub} \textcolor{muted}{$|$}
+{\huge Kyulee Jeon}\\[3pt]
+Ph.D. Candidate in Biomedical Systems Informatics, Yonsei University College of Medicine\\[1pt]
+\href{mailto:jklee320@yuhs.ac}{jklee320@yuhs.ac}\sep
+\href{https://kyulee-jeon.github.io}{kyulee-jeon.github.io}\sep
+\href{https://scholar.google.com/citations?user=WhhJ_usAAAAJ}{Google Scholar}\sep
+\href{https://github.com/kyulee-jeon}{GitHub}\sep
 \href{https://www.linkedin.com/in/kyulee-jeon-870415202}{LinkedIn}
 \end{center}
-\vspace{-6pt}
+\vspace{-4pt}
 
-\section{Summary}
-Ph.D. candidate who makes \textbf{multimodal health data interoperable} so that clinical AI can be validated and adopted in routine care.
-My research (i) \textbf{links multimodal medical images with electronic health records through a standardized common data model}, as a co-author of the Medical Imaging CDM (the imaging extension for OMOP CDM);
-(ii) measures the \textbf{real-world data heterogeneity} that limits data reuse and AI deployment; and
-(iii) \textbf{generates evidence for clinical AI} through multi-institutional, distributed validation.
-Seven peer-reviewed journal articles, five as first or co-first author. Lead organizer of the 2026 OHDSI APAC Datathon, with active collaborations with many institutions in Korea and abroad.
+\section{Research Profile}
+Ph.D. candidate in Biomedical Systems Informatics at Yonsei University College of Medicine, advised by Prof. Seng Chan You.
+I make \textbf{multimodal health data interoperable} so that clinical AI can be validated and adopted in routine care.
+My research links multimodal medical images with electronic health records through a standardized common data model,
+measures the real-world data heterogeneity that limits data reuse and AI deployment, and generates evidence for clinical AI
+through multi-institutional, distributed validation. Expected graduation: August 2027.\par\vspace{2pt}
+\textbf{Research interests:} multimodal health data interoperability; medical imaging data standardization; common data models;
+DICOM metadata; evidence generation for clinical artificial intelligence; distributed AI validation; observational research;
+terminology standardization with large language models.
 
-\section{Education}
-\entry{Yonsei University College of Medicine}{Sep 2022--Aug 2027 (expected)}{Integrated M.S./Ph.D. in Biomedical Systems Informatics \ (advisor: Prof. Seng Chan You)}{Seoul, Korea}
-\entry{Ewha Womans University}{Mar 2017--Feb 2021}{B.S. in Public Health \ (GPA 4.0/4.5)}{Seoul, Korea}
+\section{Research Directions}
+\begin{rows}{1.25in}
+\textbf{Multimodal data interoperability} & Standardized common data models that link multimodal medical images with electronic health records for the secondary use of clinical data.\gap
+\textbf{Imaging data standardization} & Real-world DICOM metadata heterogeneity and the essential metadata that reproducible research and AI deployment need.\gap
+\textbf{Evidence for clinical AI} & Multi-institutional, distributed validation pipelines that give the evidence to adopt AI models in routine clinical care.\gap
+\textbf{Terminology standardization} & Ontology-driven methods, with large language models, that map local clinical terms to international standards.
+\end{rows}
 
-\section{Selected Research}
-\textbf{Multimodal Data Interoperability: Imaging Extension for OMOP CDM (MI-CDM)}\rt{2022--present}\\
-\textit{with Johns Hopkins University and the OHDSI Medical Imaging Working Group}
+\section{Featured Papers}
+\textbf{Development of Medical Imaging Data Standardization for Imaging-Based Observational Research: OMOP Common Data Model Extension} \role{co-first author}\par
+Woo Yeon Park$^*$, \mes, Teri Sippel Schmidt, Haridimos Kondylakis, Tarik Alkasab, Blake E. Dewey, Seng Chan You, Paul Nagy\par
+\textit{Journal of Imaging Informatics in Medicine}, 2024 \ \href{https://doi.org/10.1007/s10278-024-00982-6}{paper}
 \begin{itemize}
-\item \textbf{Review article} (\textit{first author}, Invest Radiol 2025): reviews how standardized imaging data, linked with clinical data in a common data model, supports rapid AI development, rigorous validation, and reproducibility.
-\item \textbf{MI-CDM} (\textit{co-first author}, J Imaging Inform Med 2024): co-authored the imaging extension for OMOP CDM. Two extension tables link imaging events and image-derived features with clinical data.
+\item Proposes the Medical Imaging CDM, the imaging extension for OMOP CDM: two new tables and two vocabularies that link imaging events and image-derived features with standardized clinical data.
+\item The basis of my later work on multimodal data ETL and AI validation, and of the work of the OHDSI Medical Imaging Working Group.
+\end{itemize}
+\vspace{3pt}
+\textbf{Development of Clinically Validated Artificial Intelligence Model for Detecting ST-segment Elevation Myocardial Infarction} \role{co-first author}\par
+Sang-Hyup Lee$^*$, \mes, Yong-Joon Lee, Seng Chan You, Seung-Jun Lee, Sung-Jin Hong, Chul-Min Ahn, Jung-Sun Kim, Byeong-Keuk Kim, Young-Guk Ko, Donghoon Choi, Myeong-Ki Hong\par
+\textit{Annals of Emergency Medicine}, 2024 \ \href{https://doi.org/10.1016/j.annemergmed.2024.06.004}{paper}
+\begin{itemize}
+\item \textbf{Clinically validated} AI model: developed with ECGs of a percutaneous coronary intervention cohort to reflect the clinical context of STEMI patients, and validated with ECGs of emergency room patients with chest pain.
+\item Supervised learning with labels from two cardiologists who reviewed coronary angiography.
+\item Confirmed the benefit of the model in clinical settings: it identified additional true negatives for FIRST CP activation.
+\end{itemize}
+\vspace{3pt}
+\textbf{ARKE: An Ontology-Driven Framework for Automated Mapping of Local Radiology Procedure Terms to the LOINC-RadLex Playbook Using Large Language Model} \role{co-first author}\par
+Sumin Lee$^*$, \mes, Joon Seok Lim, Yiju Park, Min Seong Kim, Ju Hyun Jin, Chang Hoon Han, Soon Ho Yoon, Seng Chan You\par
+\textit{Journal of Biomedical Informatics}, 2026 \ \href{https://doi.org/10.1016/j.jbi.2026.105071}{paper}
+\begin{itemize}
+\item \textbf{Why it matters}: multi-institutional validation of imaging AI needs the exam name that links imaging exams to patient data, but each hospital writes it differently. Manual mapping to the LOINC/RSNA Radiology Playbook is slow and inconsistent between readers.
+\item \textbf{Mapping as knowledge encoding}: ARKE decomposes each local name into Playbook attributes, retrieves the top 10 candidates from the ontology by rule-based scoring, and confines the LLM to attribute parsing and final selection. No unconstrained generation, so hallucination is minimized and no codes are invented.
+\item \textbf{Result}: across two tertiary hospitals in Korea (3,326 procedure names), recall@1 of 0.70 (internal) and 0.81 (external), more than 20 points above direct code-name mapping (0.48 and 0.50; p < 0.001).
+\end{itemize}
+
+\section{Selected Research Projects}
+\head{Multimodal Data Interoperability: Imaging Extension for OMOP CDM (MI-CDM)}{2022--present}
+\subhead{Yonsei University, with Johns Hopkins University and the OHDSI Medical Imaging Working Group}{}
+\begin{itemize}
+\item \textbf{MI-CDM}: co-authored the imaging extension for OMOP CDM. Two extension tables link imaging events and image-derived features with clinical data.
 \item \textbf{MIMIC-ECG to MI-CDM}: ETL of MIMIC-IV ECG data into the extension tables. \href{https://github.com/kyulee-jeon/MIMIC-ECG}{github.com/kyulee-jeon/MIMIC-ECG}
 \item \textbf{MIMIC-CXR to MI-CDM}: ETL of MIMIC chest X-ray data into the extension tables. \href{https://github.com/kyulee-jeon/MIMIC-CXR}{github.com/kyulee-jeon/MIMIC-CXR}
 \item \textbf{End-to-end AI validation pipeline} on this data model: case study with chest X-rays of tuberculosis patients (OHDSI Global Symposium 2026).
 \item \textbf{Multi-institutional validation network} (\textit{project manager}; funded by a Seoul National University donation fund): built the same data structure with Seoul National University Hospital and SMG-SNU Boramae Medical Center, and tested the AI validation pipeline across the institutions.
 \end{itemize}
-\vspace{2pt}
-\textbf{Real-World DICOM Metadata Heterogeneity}\rt{2024--present}
+\pagebreak
+\head{Real-World DICOM Metadata Heterogeneity}{2024--present}
+\subhead{Yonsei University}{}
 \begin{itemize}
-\item \textbf{Nationwide network study} (\textit{first author}, IEEE J Biomed Health Inform, major revision): characterizes DICOM metadata heterogeneity in radiology across institutions.
-\item \textbf{DICOM compliance assessment}: compliance with mandatory DICOM attributes \aw{KOSMI 2024 Excellence Prize}.
+\item \textbf{Nationwide network study} (\textit{first author}, IEEE Journal of Biomedical and Health Informatics, major revision): characterizes DICOM metadata heterogeneity in radiology across institutions.
+\item \textbf{DICOM compliance assessment}: compliance with mandatory DICOM attributes. Excellence Prize, KOSMI 2024.
 \end{itemize}
 \vspace{2pt}
-\textbf{Clinical AI Development and Terminology Standardization}\rt{2022--present}
+\head{Clinical AI Development and Terminology Standardization}{2022--present}
+\subhead{Yonsei University}{}
 \begin{itemize}
-\item \textbf{ARKE} (\textit{co-first author}, J Biomed Inform 2026): ontology-driven LLM framework that maps local radiology procedure names to the LOINC/RSNA Radiology Playbook; validated at two tertiary hospitals.
-\item \textbf{STEMI detection} (\textit{co-first author}, Ann Emerg Med 2024): deep ensemble ECG model with clinical validation \aw{KOSMI 2022 Excellence Prize}.
+\item \textbf{ARKE} (\textit{co-first author}, J Biomed Inform 2026): ontology-driven LLM framework that maps local radiology procedure names to the LOINC/RSNA Radiology Playbook.
+\item \textbf{STEMI detection} (\textit{co-first author}, Ann Emerg Med 2024): deep ensemble ECG model with clinical validation. Excellence Prize, KOSMI 2022.
 \end{itemize}
+
+\section{Education}
+\head{Yonsei University College of Medicine}{Sep 2022--Aug 2027 (expected)}
+\subhead{Integrated M.S./Ph.D., Biomedical Systems Informatics; advisor: Prof. Seng Chan You}{Seoul, Korea}
+\vspace{2pt}
+\head{Ewha Womans University}{Mar 2017--Feb 2021}
+\subhead{B.S., Public Health; GPA 4.0/4.5}{Seoul, Korea}
 
 \section{Publications}
-{\footnotesize\color{muted}$^*$ equal contribution}\par\vspace{2pt}
-{\sffamily\bfseries\small Under Review and In Press}\par\vspace{2pt}
-\begin{rows}
-\vn{IEEE JBHI}\newline\lb{Major revision} & \textbf{Nationwide characterization of real-world DICOM metadata heterogeneity in radiology: A network cross-sectional study} (\textit{first author})\gap
-\vn{JMIR Med Inform}\newline\lb{In press} & \textbf{Integrating pathology images and reports into the OMOP Common Data Model: A practical framework using DICOM metadata} (\textit{co-author})
+$^*$ denotes equal contribution.\par\vspace{2pt}
+\begin{rows}{1.0in}
+\textbf{IEEE JBHI\newline Major revision} & \textbf{Nationwide Characterization of Real-World DICOM Metadata Heterogeneity in Radiology: A Network Cross-Sectional Study} \role{first author}\lgap
+\textbf{JMIR Med Inform\newline In press} & \textbf{Integrating Pathology Images and Reports Into the OMOP Common Data Model: A Practical Framework Using DICOM Metadata} \role{co-author}\lgap
+\textbf{J Imaging Inform Med 2026} & \textbf{Advancing the FAIRness of Multimodal Imaging Research Through the OMOP MI-CDM Framework: A Case Replication Study in Alzheimer's Disease} \role{co-author}\newline Gabriel L. O. Salvador, Jen Wooyeon Park, Teri Sippel Schmidt, Yiju Park, \me, Seng Chan You, Paul Nagy, Blake Dewey, Alzheimer's Disease Neuroimaging Initiative\newline \href{https://doi.org/10.1007/s10278-026-02146-0}{paper}\lgap
+\textbf{J Biomed Inform 2026} & \textbf{ARKE: An Ontology-Driven Framework for Automated Mapping of Local Radiology Procedure Terms to the LOINC-RadLex Playbook Using Large Language Model} \role{co-first author}\newline Sumin Lee$^*$, \mes, Joon Seok Lim, Yiju Park, Min Seong Kim, Ju Hyun Jin, Chang Hoon Han, Soon Ho Yoon, Seng Chan You\newline \href{https://doi.org/10.1016/j.jbi.2026.105071}{paper}\lgap
+\textbf{J Evid-Based Pract 2026} & \textbf{Evaluating Regional Diversity in Scientific Communication: A Comparative Analysis of COVID-19 Preprints and Peer-Reviewed Publications} \role{co-first author}\newline Dong Hyun Kim$^*$, \mes, Seng Chan You\newline \href{https://doi.org/10.63528/jebp.2026.00007}{paper}\lgap
+\textbf{JAMIA 2025} & \textbf{Breaking Data Silos: Incorporating the DICOM Imaging Standard Into the OMOP CDM to Enable Multimodal Research} \role{co-author}\newline Woo Yeon Park, Teri Sippel Schmidt, Gabriel Salvador, Kevin O'Donnell, Brad Genereaux, \me, Seng Chan You, Blake E. Dewey, Paul Nagy, Alzheimer's Disease Neuroimaging Initiative\newline \href{https://doi.org/10.1093/jamia/ocaf091}{paper}\lgap
+\textbf{Invest Radiol 2025} & \textbf{Advancing Medical Imaging Research Through Standardization: The Path to Rapid Development, Rigorous Validation, and Robust Reproducibility} \role{first author}\newline \me, Woo Yeon Park, Charles E. Kahn Jr., Paul Nagy, Seng Chan You, Soon Ho Yoon\newline \href{https://doi.org/10.1097/RLI.0000000000001106}{paper}\lgap
+\textbf{Ann Emerg Med 2024} & \textbf{Development of Clinically Validated Artificial Intelligence Model for Detecting ST-segment Elevation Myocardial Infarction} \role{co-first author}\newline Sang-Hyup Lee$^*$, \mes, Yong-Joon Lee, Seng Chan You, Seung-Jun Lee, Sung-Jin Hong, Chul-Min Ahn, Jung-Sun Kim, Byeong-Keuk Kim, Young-Guk Ko, Donghoon Choi, Myeong-Ki Hong\newline \href{https://doi.org/10.1016/j.annemergmed.2024.06.004}{paper}\lgap
+\textbf{J Imaging Inform Med 2024} & \textbf{Development of Medical Imaging Data Standardization for Imaging-Based Observational Research: OMOP Common Data Model Extension} \role{co-first author}\newline Woo Yeon Park$^*$, \mes, Teri Sippel Schmidt, Haridimos Kondylakis, Tarik Alkasab, Blake E. Dewey, Seng Chan You, Paul Nagy\newline \href{https://doi.org/10.1007/s10278-024-00982-6}{paper}
 \end{rows}
 
-\vspace{3pt}
-{\sffamily\bfseries\small Journal Articles}\par\vspace{2pt}
-\begin{rows}
-\vn{J Imaging Inform Med 2026} & \textbf{Advancing the FAIRness of multimodal imaging research through the OMOP MI-CDM framework: A case replication study in Alzheimer's disease} (\textit{co-author})\newline Gabriel L. O. Salvador, Jen Wooyeon Park, Teri Sippel Schmidt, Yiju Park, \me, Seng Chan You, Paul Nagy, Blake Dewey, ADNI \ \href{https://doi.org/10.1007/s10278-026-02146-0}{paper}\gap
-\vn{J Biomed Inform 2026} & \textbf{ARKE: An ontology-driven framework for automated mapping of local radiology procedure terms to the LOINC-RadLex playbook using large language model} (\textit{co-first author})\newline Sumin Lee$^*$, \me$^*$, Joon Seok Lim, Yiju Park, Min Seong Kim, Ju Hyun Jin, Chang Hoon Han, Soon Ho Yoon, Seng Chan You \ \href{https://doi.org/10.1016/j.jbi.2026.105071}{paper}
-\end{rows}
 \newpage
-\begin{rows}
-\gap
-\vn{J Evid-Based Pract 2026} & \textbf{Evaluating regional diversity in scientific communication: A comparative analysis of COVID-19 preprints and peer-reviewed publications} (\textit{co-first author})\newline Dong Hyun Kim$^*$, \me$^*$, Seng Chan You \ \href{https://doi.org/10.63528/jebp.2026.00007}{paper}\gap
-\vn{JAMIA 2025} & \textbf{Breaking data silos: Incorporating the DICOM imaging standard into the OMOP CDM to enable multimodal research} (\textit{co-author})\newline Woo Yeon Park, Teri Sippel Schmidt, Gabriel Salvador, Kevin O'Donnell, Brad Genereaux, \me, Seng Chan You, Blake E. Dewey, Paul Nagy, ADNI \ \href{https://doi.org/10.1093/jamia/ocaf091}{paper}\gap
-\vn{Invest Radiol 2025} & \textbf{Advancing medical imaging research through standardization: The path to rapid development, rigorous validation, and robust reproducibility} (\textit{first author})\newline \me, Woo Yeon Park, Charles E. Kahn Jr., Paul Nagy, Seng Chan You, Soon Ho Yoon \ \href{https://doi.org/10.1097/RLI.0000000000001106}{paper}\gap
-\vn{Ann Emerg Med 2024} & \textbf{Development of clinically validated artificial intelligence model for detecting ST-segment elevation myocardial infarction} (\textit{co-first author})\newline Sang-Hyup Lee$^*$, \me$^*$, Yong-Joon Lee, Seng Chan You, Seung-Jun Lee, Sung-Jin Hong, Chul-Min Ahn, Jung-Sun Kim, Byeong-Keuk Kim, Young-Guk Ko, Donghoon Choi, Myeong-Ki Hong \ \href{https://doi.org/10.1016/j.annemergmed.2024.06.004}{paper}\gap
-\vn{J Imaging Inform Med 2024} & \textbf{Development of medical imaging data standardization for imaging-based observational research: OMOP Common Data Model extension} (\textit{co-first author})\newline Woo Yeon Park$^*$, \me$^*$, Teri Sippel Schmidt, Haridimos Kondylakis, Tarik Alkasab, Blake E. Dewey, Seng Chan You, Paul Nagy \ \href{https://doi.org/10.1007/s10278-024-00982-6}{paper}
-\end{rows}
-
 \section{Conference Presentations}
-\begin{rows}
-\lb{Nov 2026} & \textbf{OHDSI APAC Symposium} (main conference, Research in Action talk): Medical Imaging CDM in Action: Toward an Imaging Evidence Network\gap
-\lb{Nov 2026} & OHDSI APAC Symposium (poster): Building a longitudinal multimodal dataset using MI-CDM: Standardizing MIMIC-IV ECG and chest radiography data\gap
-\lb{2025--2026} & KOSMI (Jun 2025), OHDSI Global Symposium (Oct 2025), KCR (Aug 2026) (posters): Implementation of distributed AI model validation framework based on OMOP Medical Image CDM: A case study using chest X-rays of tuberculosis patients\gap
-\lb{Jun 2025} & KOSMI (poster): ARKE: An automated system for standardizing radiology procedure terminology using LLMs and RAG\gap
-\lb{Oct 2024} & \textbf{OHDSI APAC Symposium} (lightning talk and poster): Feasibility of integrating DICOM headers into the OMOP Medical Imaging CDM: A pilot study using chest CT data\gap
-\lb{Jun 2024} & KOSMI (poster): Assessing compliance with mandatory metadata attributes in DICOM, the international standard for medical imaging \aw{Excellence Prize}\gap
-\lb{2023--2024} & KOSMI (Jun and Nov 2023), OHDSI Global Symposium (Oct 2023), K-SIIM (Jul 2024) (posters): Development of medical imaging data standardization for imaging-based observational research: OMOP CDM extension\gap
-\lb{Nov 2022} & \textbf{KOSMI} (oral): Development of STEMI detection algorithm with 12-lead ECG signals and 1D CNN \aw{Excellence Prize}
+\begin{rows}{1.0in}
+Nov 2026 & \textbf{OHDSI APAC Symposium}, Research in Action talk (main conference). Medical Imaging CDM in Action: Toward an Imaging Evidence Network.\gap
+Nov 2026 & \textbf{OHDSI APAC Symposium}, poster. Building a Longitudinal Multimodal Dataset Using MI-CDM: Standardizing MIMIC-IV ECG and Chest Radiography Data.\gap
+Aug 2026 & \textbf{KCR}, poster. Implementation of Distributed AI Model Validation Framework Based on OMOP Medical Image CDM: A Case Study Using Chest X-rays of Tuberculosis Patients.
 \end{rows}
 
-\section{Honors}
-\begin{rows}
-\lb{Oct 2025} & \textbf{1st place}, OHDSI Early-Stage Researchers Working Group\gap
-\lb{Jun 2024} & \textbf{Excellence Prize, Poster Presentation}, Korean Society of Medical Informatics (KOSMI) Spring Conference\gap
-\lb{Nov 2022} & \textbf{Excellence Prize, Oral Presentation}, KOSMI Autumn Conference\gap
-\lb{Oct 2020} & \textbf{Grand Prize, Poster Presentation}, Korean Society for Health Education and Promotion\gap
-\lb{Nov 2018} & \textbf{Grand Prize}, video on responsible drinking habits, Korea Health Promotion Institute
+\vspace{2.5pt}
+\begin{rows}{1.0in}
+Oct 2025 & \textbf{OHDSI Global Symposium}, poster. Implementation of Distributed AI Model Validation Framework Based on OMOP Medical Image CDM.\gap
+Jun 2025 & \textbf{KOSMI}, poster. Implementation of Distributed AI Model Validation Framework Based on OMOP Medical Image CDM.\gap
+Jun 2025 & \textbf{KOSMI}, poster. ARKE: An Automated System for Standardizing Radiology Procedure Terminology Using LLMs and RAG.
 \end{rows}
 
-\section{Service, Teaching, and Certifications}
-\begin{rows}
-\lb{Organizing} & \textbf{Lead organizer, 2026 OHDSI APAC Datathon}: prepared standardized multimodal data, designed and ran the program, and coordinated the organizing team\gap
-\lb{Tutorials} & OHDSI Global Symposium 2026, Medical Imaging WG Tutorial (ETL tutorial: materials, talk, hands-on session); OHDSI APAC Community Call mini-tutorial on concept sets and cohort definition (May 2022)\gap
-\lb{Yonsei} & Organizer, advanced track, 2026 Yonsei College of Medicine Data Bootcamp; data organizer, 2026 YUHS Challenge; ECG dataset and pre-challenge training, 2024 YUHS Big Data Challenge\gap
-\lb{Reviewing} & \textit{npj Digital Medicine} (4); \textit{Scientific Reports} (2); \textit{Scientific Data} (2); \textit{BMC Medical Imaging} (1)\gap
-\lb{Leadership} & Student leader: Ewha Society of Public Health (ESoPH); HEWA; UNEP National Committee for Korea\gap
-\lb{Certifications} & Health Information Manager and Health Educator (2021), Ministry of Health and Welfare, Korea
+\vspace{2.5pt}
+\begin{rows}{1.0in}
+Oct 2024 & \textbf{OHDSI APAC Symposium}, lightning talk and poster. Feasibility of Integrating DICOM Headers into the OMOP Medical Imaging CDM: A Pilot Study Using Chest CT Data.
 \end{rows}
 
+\vspace{2.5pt}
+\begin{rows}{1.0in}
+Jul 2024 & \textbf{K-SIIM}, poster. Development of Medical Imaging Data Standardization for Imaging Based Observational Research: OMOP CDM Extension.\gap
+Jun 2024 & \textbf{KOSMI}, poster. Assessing Compliance with Mandatory Metadata Attributes in DICOM, the International Standard for Medical Imaging. \textbf{Excellence Prize}.\gap
+Nov 2023 & \textbf{KOSMI}, poster. Extension of the OMOP Common Data Model for Medical Imaging Data Standardization.
+\end{rows}
+
+\vspace{2.5pt}
+\begin{rows}{1.0in}
+Oct 2023 & \textbf{OHDSI Global Symposium}, poster. Development of Medical Imaging Data Standardization for Imaging Based Observational Research: OMOP CDM Extension.\gap
+Jun 2023 & \textbf{KOSMI}, poster. Development of Medical Imaging Data Standardization for Imaging Based Observational Research: OMOP CDM Extension.\gap
+Nov 2022 & \textbf{KOSMI}, oral. Development of STEMI Detection Algorithm with 12-lead ECG Signals and 1D CNN. \textbf{Excellence Prize}.
+\end{rows}
+
+\section{Awards and Service}
+\begin{rows}{1.0in}
+Oct 2025 & \textbf{1st place}. OHDSI Early-Stage Researchers Working Group.\gap
+Jun 2024 & \textbf{Excellence Prize for Poster Presentation}. Korean Society of Medical Informatics (KOSMI) Spring Conference.\gap
+Nov 2022 & \textbf{Excellence Prize for Oral Presentation}. KOSMI Autumn Conference.\gap
+Oct 2020 & \textbf{Grand Prize for Poster Presentation}. Korean Society for Health Education and Promotion Autumn Conference.\gap
+Nov 2018 & \textbf{Grand Prize}. Video on responsible drinking habits, Korea Health Promotion Institute.\gap
+Service & \textbf{Reviewer}. npj Digital Medicine (4), Scientific Reports (2), Scientific Data (2), BMC Medical Imaging (1).\gap
+Nov 2026 & \textbf{Lead organizer}. 2026 OHDSI APAC Datathon: prepared standardized multimodal data, designed and ran the program, and coordinated the organizing team.
+\end{rows}
+
+\section{Teaching}
+\begin{rows}{1.0in}
+2026 & Tutorial instructor, Medical Imaging Working Group Tutorial (ETL), OHDSI Global Symposium.\gap
+2026 & Organizer and instructor, advanced track, Yonsei University College of Medicine Data Bootcamp.\gap
+2026 & Data organizer and instructor, Yonsei University Health System Challenge.\gap
+Nov 2024 & Instructor, ECG data pre-challenge training, Yonsei University Health System Big Data Challenge.\gap
+May 2022 & Mini-tutorial on concept sets and cohort definition, OHDSI APAC Community Call.
+\end{rows}
+
+\section{Technical Skills}
+\begin{rows}{1.25in}
+\textbf{Data standards} & OMOP CDM and its imaging extension (MI-CDM), DICOM, LOINC/RSNA Radiology Playbook, RadLex, SNOMED CT, OHDSI tools (ATLAS, cohort definition).\gap
+\textbf{Data engineering} & ETL pipelines for imaging, waveform, and clinical data; SQL; DICOM metadata extraction and quality assessment.\gap
+\textbf{Clinical AI} & Deep learning for ECG and medical imaging, distributed model validation, LLM and retrieval-augmented generation pipelines.\gap
+\textbf{Programming} & Python, SQL, R, Git.\gap
+\textbf{Certifications} & Health Information Manager and Health Educator (2021), Ministry of Health and Welfare, Korea.
+\end{rows}
 \end{document}
